@@ -11,4 +11,11 @@ span{
 
 h1{
     text-align: center;
+    color: blue;
+}
+li{
+    border: solid yellow;
+}
+span {
+    border: dotted darkcyan;
 }
