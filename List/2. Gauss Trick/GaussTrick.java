@@ -18,7 +18,7 @@ public class GaussTrick {
                 .map(Integer::parseInt).collect(Collectors.toList());
 
 
-        for (int i = 0; i < numbers.size() / 2; i++) {
+        for (int i = 0; i <= numbers.size() / 2; i++) {
             numbers.set(i, (numbers.get(i) + numbers.get(numbers.size() - 1)));
             numbers.remove(numbers.size() - 1);
 
