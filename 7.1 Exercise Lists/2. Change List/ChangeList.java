@@ -23,21 +23,27 @@ public class ChangeList {
 
             if (command.equals("Delete")) {
                 int elementToDelete = Integer.parseInt(data[1]);
+                
+//                Another way to sort
+//                numbers = numbers.stream().filter(e -> !e.equals(data[1]))
+//                        .collect(Collectors.toList());
+
                 List<Integer> temp = new ArrayList<>();
                 for (int i = 0; i < numbers.size(); i++) {
                     if (!(numbers.get(i) == elementToDelete)) {
-                      temp.add(numbers.get(i));
+                        temp.add(numbers.get(i));
                     }
                 }
                 numbers = temp;
             } else if (command.equals("Insert")) {
                 int elementToInsert = Integer.parseInt(data[1]);
                 int index = Integer.parseInt(data[2]);
-
-                numbers.add(index , elementToInsert);
+                if (index >= 0 && index < numbers.size()) {
+                    numbers.add(index, elementToInsert);
+                }
             }
         }
         System.out.println(numbers.toString()
-                .replaceAll("\\[|,|\\]" , ""));
+                .replaceAll("\\[|,|\\]", ""));
     }
 }
